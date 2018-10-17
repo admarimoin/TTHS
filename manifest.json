@@ -1,0 +1,33 @@
+{
+	"manifest_version": 2,
+	"version": "0.0.1",
+	"name": "TofuTwitteraccountHandlerSearch",
+	"description": "豆腐生のTwitterアカウントか否かを判断します。",
+	"content_scripts": [
+		{
+			"matches": [
+				"https://twitter.com/mrptf",
+				"https://twitter.com/iwashigaizi"
+			],
+			"js": ["script.js"],
+			"run_at": "document_start"
+		}
+	],
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_title": "TofuTwitteraccountHandlerSearch",
+		"default_popup": "popup.html"
+	},
+	"icons": {
+		"128": "icon.png"
+	},
+	"background": {
+		"scripts": ["background.js"]
+	},
+	"permissions": [
+		"tabs",
+		"background",
+		"contextMenus",
+		"https://twitter.com/*"
+	]
+}
